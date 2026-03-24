@@ -6,7 +6,6 @@ Browser-only Tinder insights generator. Upload either a Tinder `data.json` expor
 - left vs right swipes
 - matches vs no match
 - chats vs no chats
-- chats with `>=5` messages vs chats with `<5` messages
 
 All parsing happens locally in the browser.
 
@@ -18,6 +17,12 @@ npm run dev
 ```
 
 Open `http://127.0.0.1:4173`.
+
+## GitHub Pages
+
+Push to `main` and GitHub Actions will deploy the site to:
+
+`https://overclockedsoul.github.io/tinder_forensica/`
 
 ## Test
 

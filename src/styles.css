@@ -179,7 +179,7 @@ input {
 
 .tree-frame {
   width: 100%;
-  aspect-ratio: 72 / 66;
+  aspect-ratio: 72 / 56;
   border-radius: 34px;
   box-shadow: 0 40px 100px rgba(30, 24, 86, 0.28);
   overflow: hidden;
@@ -193,7 +193,7 @@ input {
 
 .tree-title {
   fill: rgba(255, 255, 255, 0.92);
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 700;
 }
 
@@ -203,37 +203,47 @@ input {
 
 .pill-kicker {
   fill: #7560ee;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 700;
 }
 
 .pill-count {
   fill: #6f56ef;
-  font-size: 18px;
+  font-size: 26px;
   font-weight: 700;
 }
 
-.metric-label-name {
+.pill-percent {
+  fill: rgba(111, 86, 239, 0.7);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.bubble-label {
   fill: rgba(255, 255, 255, 0.78);
   font-size: 14px;
 }
 
-.metric-label-subtitle {
-  fill: rgba(255, 255, 255, 0.58);
-  font-size: 11px;
-  font-style: italic;
-}
-
-.metric-label-value {
+.terminal-value {
   fill: rgba(255, 255, 255, 0.98);
-  font-size: 22px;
+  font-size: 30px;
   font-weight: 700;
 }
 
-.metric-label-percent {
-  fill: rgba(255, 255, 255, 0.88);
-  font-size: 13px;
-  letter-spacing: 0.04em;
+.terminal-percent {
+  fill: rgba(255, 255, 255, 0.78);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.terminal-label {
+  fill: rgba(255, 255, 255, 0.78);
+  font-size: 14px;
+}
+
+.terminal-subtitle {
+  fill: rgba(255, 255, 255, 0.58);
+  font-size: 10px;
 }
 
 @media (max-width: 720px) {
@@ -260,15 +270,26 @@ input {
     padding: 0 14px;
   }
 
-  .metric-label-name {
-    font-size: 12px;
+  .bubble-label,
+  .terminal-label {
+    font-size: 10px;
   }
 
-  .metric-label-value {
-    font-size: 18px;
+  .terminal-value {
+    font-size: 22px;
   }
 
-  .metric-label-percent {
-    font-size: 11px;
+  .terminal-percent {
+    font-size: 10px;
+  }
+
+  .pill-count {
+    font-size: 20px;
+  }
+
+  .pill-percent,
+  .terminal-subtitle,
+  .pill-kicker {
+    font-size: 9px;
   }
 }
