@@ -1,0 +1,274 @@
+@import "@fontsource/space-grotesk/400.css";
+@import "@fontsource/space-grotesk/500.css";
+@import "@fontsource/space-grotesk/700.css";
+@import "@fontsource/instrument-serif/400.css";
+
+:root {
+  font-family: "Space Grotesk", sans-serif;
+  color: #f6f5ff;
+  background:
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.22), transparent 26%),
+    radial-gradient(circle at 85% 18%, rgba(255, 255, 255, 0.14), transparent 22%),
+    linear-gradient(180deg, #6d9fc7 0%, #6479d8 46%, #6b4fe0 100%);
+  color-scheme: only light;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.app-shell {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.app-backdrop {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 22% 18%, rgba(255, 255, 255, 0.18), transparent 18%),
+    radial-gradient(circle at 80% 14%, rgba(255, 255, 255, 0.12), transparent 16%);
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+.app-panel {
+  position: relative;
+  z-index: 1;
+  width: min(720px, calc(100% - 24px));
+  margin: 0 auto;
+  padding: 20px 0 28px;
+}
+
+.upload-panel {
+  padding: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 28px;
+  background: rgba(22, 22, 58, 0.18);
+  backdrop-filter: blur(24px);
+  box-shadow: 0 28px 80px rgba(39, 42, 102, 0.18);
+}
+
+.upload-panel h1 {
+  margin: 0;
+  font-family: "Instrument Serif", serif;
+  font-size: clamp(2.1rem, 3vw, 3rem);
+  font-weight: 400;
+  letter-spacing: -0.04em;
+}
+
+.upload-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+  margin-top: 22px;
+}
+
+.secondary-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 0 18px;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.14);
+  color: inherit;
+  cursor: pointer;
+  transition:
+    transform 160ms ease,
+    opacity 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.secondary-action:hover,
+.file-input:hover::file-selector-button,
+.file-input:focus-within::file-selector-button,
+.file-input:focus::file-selector-button {
+  transform: translateY(-1px);
+}
+
+.file-input {
+  max-width: min(100%, 440px);
+  color: rgba(246, 245, 255, 0.84);
+}
+
+.file-input::file-selector-button {
+  min-height: 52px;
+  margin-right: 16px;
+  padding: 0 22px;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.95);
+  color: #6551dc;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 14px 28px rgba(29, 22, 66, 0.12);
+  transition:
+    transform 160ms ease,
+    opacity 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.upload-hint {
+  margin: 0;
+  color: rgba(244, 243, 255, 0.74);
+  font-size: 0.95rem;
+}
+
+.status-region {
+  margin-top: 18px;
+}
+
+.status-banner {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  min-height: 52px;
+  padding: 0 18px;
+  border-radius: 18px;
+  background: rgba(9, 12, 42, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+.status-banner.success {
+  margin-bottom: 12px;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.status-banner.loading {
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.status-banner.error {
+  color: #fff0f0;
+  background: rgba(110, 17, 49, 0.32);
+}
+
+.results-shell {
+  display: block;
+}
+
+.tree-stage {
+  display: flex;
+  justify-content: center;
+}
+
+.tree-frame {
+  width: 100%;
+  aspect-ratio: 72 / 66;
+  border-radius: 34px;
+  box-shadow: 0 40px 100px rgba(30, 24, 86, 0.28);
+  overflow: hidden;
+}
+
+.tree-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.tree-title {
+  fill: rgba(255, 255, 255, 0.92);
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.pill-base {
+  fill: rgba(255, 255, 255, 0.98);
+}
+
+.pill-kicker {
+  fill: #7560ee;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.pill-count {
+  fill: #6f56ef;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.metric-label-name {
+  fill: rgba(255, 255, 255, 0.78);
+  font-size: 14px;
+}
+
+.metric-label-subtitle {
+  fill: rgba(255, 255, 255, 0.58);
+  font-size: 11px;
+  font-style: italic;
+}
+
+.metric-label-value {
+  fill: rgba(255, 255, 255, 0.98);
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.metric-label-percent {
+  fill: rgba(255, 255, 255, 0.88);
+  font-size: 13px;
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 720px) {
+  .app-panel {
+    width: min(100% - 16px, 720px);
+    padding: 12px 0 18px;
+  }
+
+  .upload-panel {
+    padding: 22px 18px;
+  }
+
+  .upload-panel h1 {
+    font-size: 1.9rem;
+  }
+
+  .status-banner {
+    padding: 0 14px;
+    gap: 10px;
+  }
+
+  .secondary-action {
+    min-height: 42px;
+    padding: 0 14px;
+  }
+
+  .metric-label-name {
+    font-size: 12px;
+  }
+
+  .metric-label-value {
+    font-size: 18px;
+  }
+
+  .metric-label-percent {
+    font-size: 11px;
+  }
+}
