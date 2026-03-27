@@ -1,56 +1,23 @@
-# Browser Tinder Insights
+# Tinder Forensica
 
-Browser-only Tinder insights generator. Upload either a Tinder `data.json` export or a `.zip` containing `data.json`, and the app renders a portrait SVG tree showing:
+![alt text](logos/logo_better_tinder.png)
 
-- total swipes
-- left vs right swipes
-- matches vs no match
-- chats vs no chats
+Tinder Forensica is a browser-based data storytelling project that turns a raw Tinder export into a polished visual narrative. Instead of leaving users with a dense `data.json` archive, it extracts the key relationship funnel, from total swipes to right swipes, matches, and real conversations, and renders the result as a clean portrait SVG insight tree. Being entirely browser based it ensures the privacy of the users data. You can try it in https://overclockedsoul.github.io/tinder_forensica
 
-All parsing happens locally in the browser.
+The application accepts either a Tinder `data.json` export or a `.zip` containing that file, validates the structure in the browser, computes the main engagement metrics, and displays them in a single screen without sending data to any backend. That privacy-first behavior is a core part of the project value: the experience feels lightweight and safe because all parsing happens locally on the user's device.
 
-## Run
+## What The Project Does
 
-```bash
-npm install
-npm run dev
-```
+- Converts Tinder export files into a readable visual summary.
+- Highlights total swipes, left vs right swipes, matches, and chats.
+- Distinguishes between matches that led to conversation and those that did not.
+- Uses a custom SVG layout to present the data as a visual progression rather than a plain dashboard.
+- Keeps sensitive personal data entirely in the browser.
 
-Open `http://127.0.0.1:4173`.
+## Stack
 
-## GitHub Pages
-
-Push to `main` and GitHub Actions will deploy the site to:
-
-`https://overclockedsoul.github.io/tinder_forensica/`
-
-## Test
-
-```bash
-npm test
-```
-
-## Build
-
-```bash
-npm run build
-npm run preview
-```
-
-## Browser Verification With Playwright CLI
-
-Start the app in another terminal:
-
-```bash
-npm run dev
-```
-
-Then run:
-
-```bash
-npm run verify:browser
-```
-
-The verification script opens the app with Playwright CLI, uploads `data/Joan/data.json`, captures snapshots, and checks that the success state and insights tree are present.
-
-If `playwright-cli` is not installed globally, the script falls back to `npx playwright-cli`.
+- React 19
+- TypeScript
+- Vite
+- Vitest
+- JSZip
